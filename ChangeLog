@@ -1,3 +1,9 @@
+2017-11-21  Lukas Kluft  <lukas.kluft@gmail.com>
+
+	* solutions/02-vibrational_spectra:
+
+	Rename second exercise for consistency between repositories.
+
 2017-11-20  Stefan Buehler  <stefan.buehler(at)uni-hamburg.de>
 
 	* solutions/02-absorption/exe2_solution.tex: Added some
