@@ -1,5 +1,5 @@
 SUBDIRS = 01-rotational_spectra \
-          02-absorption \
+          02-vibrational_spectra \
           03-line_shape \
           04-rtcalc \
           05-jacobian \
