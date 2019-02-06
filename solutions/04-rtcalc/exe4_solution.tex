@@ -3,45 +3,48 @@
 
 \title{Exercise 4: Atmospheric Brightness Temperature Spectra}
 \author{Sample Solution}
-\date{Effective: 26.01.2017}
+\date{Effective: 06.02.2019}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \maketitle
 
-1. Use the ARTS control file \texttt{rtcalc.arts} and Matlab plotting script
-\texttt{plot\_bt.m} to calculate and display the spectrum of atmospheric zenith
-opacity in the microwave spectral range for a midlatitude-summer atmosphere.
-There are four spectral lines in the plot. 
+1. Run the ARTS control file \texttt{rtcalc.arts} to calculate the spectrum of
+atmospheric zenith opacity in the microwave spectral range for a
+midlatitude-summer atmosphere over a wet land surface. You can use the
+attributive plotting script \texttt{plot\_bt.py} to visualize the results.
 
 \textbf{Questions}
 \begin{itemize}
   \item To which species do these lines belong? (You can find this out by
-      playing with the absorption species selection in the ARTS control file.)
+    playing with the absorption species selection in the ARTS control file.)
+
+    \begin{figure}[ht]
+      \centering
+      \begin{subfigure}[t]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{{plots/opacity_N2+H2O_0.0km_0deg}.pdf}
+        \caption{\ce{H2O} and \ce{N2}}
+      \end{subfigure}
+      \hfill
+      \begin{subfigure}[t]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{{plots/opacity_N2+O2_0.0km_0deg}.pdf}
+        \caption{\ce{O2} and \ce{N2}}
+      \end{subfigure}
+      \caption{Zenith opacity separately for \ce{O2} and \ce{H2O} molecules.}
+      \label{figure:abs_molucules}
+    \end{figure}
+
+  \clearpage
   \item We speak of window regions where the zenith opacity is below 1. Where
-      are they?
+    are they?
+
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[width=\textwidth]{{plots/opacity_N2+O2+H2O_0.0km_0deg}.pdf}
+      \caption{Zenith opacity.}
+    \end{figure}
 \end{itemize}
-
-\begin{figure}[ht]
-  \centering
-  \begin{subfigure}[t]{0.45\textwidth}
-  \includegraphics[width=\textwidth]{plots/opacity_N2+H2O_0km_0deg.pdf}
-  \caption{\ce{H2O} and \ce{N2}}
-  \end{subfigure}
-  \begin{subfigure}[t]{0.45\textwidth}
-  \includegraphics[width=\textwidth]{plots/opacity_N2+O2_0km_0deg.pdf}
-  \caption{\ce{O2} and \ce{N2}}
-  \end{subfigure}
-  \caption{Zenith opacity separately for \ce{O2} and \ce{H2O} molecules.}
-  \label{figure:abs_molucules}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=\textwidth]{plots/opacity_N2+O2+H2O_0km_0deg.pdf}
-  \caption{Zenith opacity.}
-\end{figure}
 
 \clearpage
 
@@ -56,23 +59,6 @@ atmospheric brightness temperature spectrum for different hypothetical sensors:
   \item A sensor on an airplane (z = 10\,km) looking in the zenith direction.
 \end{itemize}
 
-% figures abs cross sections
-\begin{figure}[h]
-  \centering
-  \begin{subfigure}[h!]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{plots/bt_N2+O2+H2O_0km_0deg.pdf}
-    \caption{Ground based.}
-    \end{subfigure}
-    \hfill    
-    \begin{subfigure}[h!]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{plots/bt_N2+O2+H2O_10km_0deg.pdf}
-    \caption{10\,km height.}
-    \end{subfigure}
-  \caption{Brightness temperature for a sensor positioned at the ground and at
-    10\,km height.}
-  \label{figure:abs_pressure}
-\end{figure}
-
 \textbf{Questions}
 \begin{itemize}
     \item In Plot (a), why do the lines near 60\,GHz and near 180\,GHz appear
@@ -84,6 +70,23 @@ atmospheric brightness temperature spectrum for different hypothetical sensors:
         see?
 \end{itemize}
 
+% figures abs cross sections
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[h!]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{{plots/bt_N2+O2+H2O_0.0km_0deg}.pdf}
+      \caption{Ground based.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[h!]{0.49\textwidth}
+      \includegraphics[width=\textwidth]{{plots/bt_N2+O2+H2O_10.0km_0deg}.pdf}
+      \caption{10\,km height.}
+    \end{subfigure}
+  \caption{Brightness temperature for a sensor positioned at the ground and at
+    10\,km height.}
+  \label{figure:abs_pressure}
+\end{figure}
+
 \clearpage
 
 3. Make the same calculation for a satellite sensor (z = 800\,km) looking nadir
@@ -91,13 +94,16 @@ atmospheric brightness temperature spectrum for different hypothetical sensors:
 
 \textbf{Questions}
 \begin{itemize}
-  \item Why is the line at 180\,GHz ``upside-down', but the one at 20\,GHz not?
-  \item Explain the funny shape of the \ce{O2} line at 120\,GHz.
+  \item Explain the brightness temperature simulated in the window regions.
+  \item Why does the line at 22\,GHz look different from the others?
+  \item Explain the “funny” shape close to the center of the \ce{O2} line at
+    120\,GHz (you may have to perform an ARTS simulation focused around that
+    frequency).
 \end{itemize}
 
 \begin{figure}[h]
 \centering
- \includegraphics[width=\textwidth]{plots/bt_N2+O2+H2O_800km_180deg.pdf}
- \caption{Brightness temperature seen from a sensor looking down.}
+  \includegraphics[width=\textwidth]{{plots/bt_N2+O2+H2O_800.0km_180deg}.pdf}
+  \caption{Brightness temperature seen from a sensor looking down.}
 \end{figure}
 \end{document}
