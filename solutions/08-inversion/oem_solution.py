@@ -75,6 +75,14 @@ ax.set_xlabel('Jacobian [K/1]')
 ax.set_ylim(z.min(), z.max())
 fig.savefig('plots/jacobians.pdf')
 
+fig, ax = plt.subplots()
+sm = ax.pcolormesh(f_grid, z, K, cmap='cividis', vmin=0, rasterized=True)
+fig.colorbar(sm, label='Jacobian [K/1]')
+ax.set_xlabel('Frequency [GHz]')
+ax.set_ylabel('Height [km]')
+ax.set_ylim(z.min(), z.max())
+fig.savefig('plots/jacobians2d.pdf')
+
 # Plot the OEM result next to the true atmospheric state and the a priori.
 x_oem = retrieve(y_measure, K, x_apriori, y_apriori, S_x, S_y)
 x_true = xml.load('input/x_true.xml').get('abs_species-H2O', keep_dims=False)

@@ -3,7 +3,7 @@
 
 \title{Exercise 8: Optimal Estimation Method}
 \author{Sample Solution}
-\date{Effective: 16.01.2019}
+\date{Effective: 14.02.2019}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -23,13 +23,21 @@ function of the frequency grid. Add reasonable labels to your plots.
 
 3. Plot the Jacobians K in a suitable way.
 
-\begin{figure}[ht]
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=\textwidth]{plots/jacobians.pdf}
-  \caption{Jacobians \label{fig:jacobians}}
+  \includegraphics[width=0.9\textwidth]{plots/jacobians.pdf}
+  \caption{Jacobians as function of height. Each line represents the Jacobian
+    at a certain frequency \label{fig:jacobians}}
 \end{figure}
 
-\newpage
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\textwidth]{plots/jacobians2d.pdf}
+  \caption{Jacobians as function of height and frequency.
+    \label{fig:jacobians2d}}
+\end{figure}
+
+\clearpage
 
 5. Plot the retrieved water vapor profile alongside the a priori state and the
 true atmospheric state as a function of height. Discuss the results.
@@ -57,10 +65,10 @@ possible to estimate the vertical resolution?
 \begin{itemize}
   \item The measurement response indicates useful information between
     15--60\,km
-  \item The width (overlap) of the averaging kernels allow to estimate the
-    vertical resolution. The vertical resolution decreases with height, which
-    is consistent with the retrieved water vapor profile (the oscillation shape
-    is no longer retrieved).
+  \item The width of the averaging kernels allow to estimate the vertical
+    resolution. The vertical resolution decreases with height,
+    which is consistent with the retrieved water vapor profile
+    (the oscillation shape is no longer retrieved).
 \end{itemize}
 
 \begin{figure}[ht]
